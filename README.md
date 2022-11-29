@@ -15,5 +15,5 @@ _Run the command below in you project:_
 python aseprite_to_sheet.py
 ```
 
-![Alt Text](https://github.com/RemySd/aseprite-sheet-by-tags/blob/master/medias/example.gif)
+![Alt Text](https://github.com/RemySd/aseprite-sheet-by-tags/blob/master/medias/exemple.gif)
 
