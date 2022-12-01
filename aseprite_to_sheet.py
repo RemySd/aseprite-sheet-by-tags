@@ -21,10 +21,8 @@ for root, directories, files in os.walk(default_path):
     for file in files:
         filePath = os.path.join(root, file)
         if '.aseprite' in filePath and filePath not in files_to_exlude:
-            print(filePath)
             subprocess.run(
-                [binaryAseLocation, "-b", filePath, "--save-as", filePath.replace(".aseprite", "_{tag}.tag.aseprite")],
-                capture_output=True
+                [binaryAseLocation, "-b", filePath, "--save-as", filePath.replace(".aseprite", "_{tag}.tag.aseprite")]
             )
 
 # Fetch all temporaries files and generate the sprite sheet
@@ -33,7 +31,6 @@ for root, directories, files in os.walk(default_path):
         if '.tag.aseprite' in file:
             filePath = os.path.join(root, file)
             subprocess.run(
-                [binaryAseLocation, "-b", filePath, "--sheet", f"{filePath.replace('.tag.aseprite', '').rstrip('_')}.png"],
-                capture_output=True
+                [binaryAseLocation, "-b", filePath, "--sheet", f"{filePath.replace('.tag.aseprite', '').rstrip('_')}.png"]
             )
             os.remove(os.path.join(root, file))
